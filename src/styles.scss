@@ -1,3 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'styles-variables';
+@import '~font-awesome/scss/font-awesome';
+@import 'styles-reset';
+@import '~@angular/material/theming';
+@include mat-core();
 
-body { margin: 0; }
+@import 'themes/default-theme.scss';
+@import 'themes/light-theme.scss';
+@import 'themes/black-theme.scss';
+
+@import 'app/app.component.theme.scss';
+
+@import 'styles-reset.scss-theme';
+
+@import '~@angular/material/theming';
+
+@mixin custom-components-theme($theme) {
+  @include styles-reset-theme($theme);
+  @include app-component-theme($theme);
+}
+
+.default-theme {
+  @include angular-material-theme($app-theme);
+  @include custom-components-theme($app-theme);
+}
+
+.light-theme {
+  @include angular-material-theme($td-light-theme);
+  @include custom-components-theme($td-light-theme);
+}
+
+.black-theme {
+  @include angular-material-theme($td-black-theme);
+  @include custom-components-theme($td-black-theme);
+}
+
+.dialog-panel {
+  .mat-dialog-container {
+    padding: 0;
+    margin: 24px;
+      box-shadow: 10px 10px 10px black !important;    
+  }
+}
