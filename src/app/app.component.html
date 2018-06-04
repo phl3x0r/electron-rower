@@ -1,17 +1,14 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
-<ul>
-  <li>
-    <h2>Speed: {{speed$|async}}</h2>
-  </li>
-  <li>
-    <h2>Watt: {{watt$|async}}</h2>
-  </li>
-  <li>
-    <h2>Distance: {{distance$|async}}</h2>
-  </li>
-</ul>
+<mat-tab-group (selectedTabChange)="onTabChange($event)">
+  <mat-tab label="Dashboard">
+    <app-dashboard [metrics]="metrics$">
+    </app-dashboard>
+  </mat-tab>
+  <mat-tab label="Dashboard 2">
+    <app-dashboard [metrics]="metrics$">
+    </app-dashboard>
+  </mat-tab>
+  <mat-tab label="Dashboard 3">
+    <app-dashboard [metrics]="metrics$">
+    </app-dashboard>
+  </mat-tab>
+</mat-tab-group>
