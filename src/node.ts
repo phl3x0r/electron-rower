@@ -42,7 +42,7 @@ app.on('activate', () => {
 });
 
 app.on('ready', () => {
-  const readout = new Readout();
+  // const readout = new Readout();
   win.webContents.on('did-finish-load', () => {
     let distance = 0;
 
@@ -59,12 +59,12 @@ app.on('ready', () => {
     }, 1000);
 
     // send the real data stream to app
-    readout
-      .getDataStream()
-      .pipe(takeWhile(() => win !== null))
-      .subscribe(data => {
-        win.webContents.send('rowerEvent', data);
-      });
+    // readout
+    //   .getDataStream()
+    //   .pipe(takeWhile(() => win !== null))
+    //   .subscribe(data => {
+    //     win.webContents.send('rowerEvent', data);
+    //   });
   });
 });
 
