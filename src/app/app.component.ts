@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
       }
     );
     this.metrics$ = this.metricsSubject$.asObservable().pipe(
-      startWith(<RowerEventMessage>{ speed: 0, watt: 0, distance: 0 }),
+      startWith(<RowerEventMessage>{ timeTo500m: 0, watt: 0, distance: 0 }),
       tap(metrics => console.log(metrics))
     );
   }

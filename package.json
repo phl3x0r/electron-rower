@@ -29,8 +29,10 @@
     "core-js": "^2.5.4",
     "electron": "^2.0.2",
     "font-awesome": "^4.7.0",
+    "influx": "^5.0.7",
     "ngx-electron": "^1.0.4",
     "rxjs": "^6.0.0",
+    "serialport": "^6.2.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

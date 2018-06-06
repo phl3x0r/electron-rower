@@ -5,5 +5,10 @@
     "module": "es2015",
     "types": []
   },
-  "exclude": ["src/test.ts", "src/node.ts", "**/*.spec.ts"]
+  "exclude": [
+    "src/test.ts",
+    "src/node.ts",
+    "**/*.spec.ts",
+    "src/server/**/*"
+  ]
 }
