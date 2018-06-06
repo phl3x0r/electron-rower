@@ -37,14 +37,7 @@ export class MetricsService {
   slightlyChange(kmph: number): number {
     const maxChange = 0.5;
     const change = this.getRandom(maxChange * 2) - maxChange;
-
-    console.log('change: ', change);
-    console.log(
-      'new kmph: ',
-      kmph + change > 0 ? kmph + change : kmph - change
-    );
-    // return kmph;
-    return kmph + change > 0 && kmph + change < 20
+    return kmph + change > 5 && kmph + change < 20
       ? kmph + change
       : kmph - change;
   }
