@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { RowerEventMessage } from '../../models/rower-event-message.interface';
-import { Observable, interval } from 'rxjs';
-import { map, startWith, share } from 'rxjs/operators';
+import { Observable, interval, ReplaySubject } from 'rxjs';
+import { map, startWith, share, shareReplay } from 'rxjs/operators';
+import { environment } from '@env';
 
 @Injectable({ providedIn: 'root' })
 export class MetricsService {
@@ -26,7 +27,7 @@ export class MetricsService {
           watt: watt
         };
       }),
-      share()
+      shareReplay(environment.maxChartPoints)
     );
   }
 

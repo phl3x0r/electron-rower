@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  electron: true
+  electron: true,
+  maxChartPoints: 100
 };
 
 /*

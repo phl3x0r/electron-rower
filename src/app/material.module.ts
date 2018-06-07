@@ -20,7 +20,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {
   MatGridListModule,
   MatExpansionModule,
-  MatDialogModule
+  MatDialogModule,
+  MatSlideToggleModule
 } from '@angular/material';
 
 @NgModule({
@@ -46,6 +47,7 @@ import {
     MatGridListModule,
     MatExpansionModule,
     MatDialogModule,
+    MatSlideToggleModule,
 
     // Flex layout
     FlexLayoutModule
@@ -72,6 +74,7 @@ import {
     MatGridListModule,
     MatExpansionModule,
     MatDialogModule,
+    MatSlideToggleModule,
 
     // Flex layout
     FlexLayoutModule

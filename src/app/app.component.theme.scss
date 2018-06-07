@@ -7,15 +7,15 @@ $config: mat-typography-config();
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
 
-    :host() {
-        background-color: map-get($primary, darker);
-    }
+  :host() {
+    background-color: map-get($primary, darker);
+  }
 
-    div {
-        background-color: map-get($primary, darker);
-    }
+  // div {
+  //     background-color: map-get($primary, darker);
+  // }
 
-    mat-tab-group {
-        background-color: map-get($primary, darker);
-    }
+  mat-tab-group {
+    background-color: map-get($primary, darker);
+  }
 }

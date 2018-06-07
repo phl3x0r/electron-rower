@@ -137,5 +137,10 @@
       }
     }
   },
-  "defaultProject": "electron-rower"
+  "defaultProject": "electron-rower",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
