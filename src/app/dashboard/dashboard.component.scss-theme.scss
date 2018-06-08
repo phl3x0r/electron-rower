@@ -1,0 +1,10 @@
+@import '~@angular/material/theming';
+
+@mixin dashboard-component-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  .highcharts-background {
+    background-color: map-get($primary, 'darker');
+  }
+}

@@ -1,16 +1,18 @@
-<div>
-  <mat-tab-group (selectedTabChange)="onTabChange($event)">
-    <mat-tab label="Dashboard">
-      <app-dashboard [metrics]="metrics$">
-      </app-dashboard>
-    </mat-tab>
-    <mat-tab label="Dashboard 2">
-      <h1 class="mat-h1">Salmon</h1>
-      <div style="height:400px; width: 600px; background-color: salmon"></div>
-    </mat-tab>
-    <mat-tab label="Dashboard 3">
-      <h1 class="mat-h1">Pale Turquoise</h1>
-      <div style="height:400px; width: 600px; background-color:paleturquoise"></div>
-    </mat-tab>
-  </mat-tab-group>
-</div>
+<!-- <mat-sidenav-container class="all-wrap" fullscreen>
+  <mat-sidenav #sidenav mode="push" class="mat-drawer-content mat-sidenav-content ng-star-inserted"> -->
+<mat-tab-group (selectedTabChange)="onTabChange($event)">
+  <mat-tab label="Dashboard">
+    <app-dashboard [metrics]="metrics$">
+    </app-dashboard>
+  </mat-tab>
+  <mat-tab label="Dashboard 2">
+    <h1 class="mat-h1">Salmon</h1>
+    <div style="height:400px; width: 600px; background-color: salmon"></div>
+  </mat-tab>
+  <mat-tab label="Dashboard 3">
+    <h1 class="mat-h1">Pale Turquoise</h1>
+    <div style="height:400px; width: 600px; background-color:paleturquoise"></div>
+  </mat-tab>
+</mat-tab-group>
+<!-- </mat-sidenav>
+</mat-sidenav-container> -->

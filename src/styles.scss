@@ -7,12 +7,14 @@
 @import 'themes/light-theme.scss';
 @import 'themes/black-theme.scss';
 
-@import 'app/app.component.theme.scss';
+@import 'app/app.component.scss-theme.scss';
+@import 'app/dashboard/dashboard.component.scss-theme.scss';
 
 @import '~@angular/material/theming';
 
 @mixin custom-components-theme($theme) {
   @include app-component-theme($theme);
+  @include dashboard-component-theme($theme);
 }
 
 .default-theme {

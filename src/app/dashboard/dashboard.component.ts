@@ -7,11 +7,7 @@ import {
   ElementRef,
   AfterViewInit
 } from '@angular/core';
-import {
-  RowerEventMessage,
-  ChartConfig,
-  ChartUnits
-} from '@models';
+import { RowerEventMessage, ChartConfig, ChartUnits } from '@models';
 import { Observable, Subscription, BehaviorSubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import * as HighCharts from 'highcharts';
@@ -40,6 +36,9 @@ export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
   ngAfterViewInit(): void {
     this.speedChart = HighCharts.chart(this.speedTarget.nativeElement, {
       title: { text: 'Rower Metrics' },
+      chart: {
+        backgroundColor: 'rgba(0,0,0,0)'
+      },
       plotOptions: {
         line: {
           events: {
@@ -51,10 +50,43 @@ export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
           marker: {
             enabled: false
           }
+        },
+
+        areaspline: {
+          fillColor: {
+            linearGradient: {
+              x1: 0,
+              y1: 0,
+              x2: 0,
+              y2: 1
+            },
+            stops: [
+              [0, HighCharts.getOptions().colors[2]],
+              [
+                1,
+                (HighCharts.Color(
+                  HighCharts.getOptions().colors[2]
+                ) as HighCharts.Gradient)
+                  .setOpacity(0)
+                  .get('rgba')
+              ]
+            ]
+          },
+          marker: {
+            radius: 2,
+            fillColor: 'green'
+          },
+          lineWidth: 1,
+          states: {
+            hover: {
+              lineWidth: 1
+            }
+          }
         }
       },
       yAxis: {
-        reversed: true,
+        min: 0,
+        reversed: false,
         title: {
           text: ChartUnits.TT500.toString()
         }
@@ -63,13 +95,13 @@ export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
     this.speedChart
       .addSeries({
         name: ChartUnits.TT500,
-        type: 'line'
+        type: 'areaspline'
       })
       .show();
     this.speedChart
       .addSeries({
         name: ChartUnits.Watt,
-        type: 'line'
+        type: 'areaspline'
       })
       .hide();
 
@@ -100,7 +132,6 @@ export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
     this.speedChart.series[$event.checked ? 0 : 1].hide();
     this.speedChart.series[$event.checked ? 1 : 0].show();
     this.speedChart.yAxis[0].update({
-      reversed: !$event.checked,
       title: {
         text: $event.checked ? ChartUnits.Watt : ChartUnits.TT500
       }
