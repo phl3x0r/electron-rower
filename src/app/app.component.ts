@@ -2,7 +2,7 @@ import { Component, OnInit, NgZone, Injector } from '@angular/core';
 import { ElectronService } from 'ngx-electron';
 import { RowerEventMessage } from '../models/rower-event-message.interface';
 import { ReplaySubject, Observable } from 'rxjs';
-import { map, startWith, tap } from 'rxjs/operators';
+import { startWith, tap } from 'rxjs/operators';
 import { MetricsService } from './services/metrics.service';
 import { environment } from '../environments/environment';
 

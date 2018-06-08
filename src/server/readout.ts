@@ -8,7 +8,7 @@ export class Readout {
   private readonly INFLUX_HOST = 'INSERT YOUR INFLUXDB URL HERE';
   private readonly INFLUX_DB = 'INSERT YOUR INFLUXDB NAME HERE';
   private influxClient: InfluxDB;
-  private influxWriter: any;
+  // private influxWriter: any;
   private parser: any;
   private dataStream$: BehaviorSubject<RowerEventMessage> = new BehaviorSubject<
     RowerEventMessage

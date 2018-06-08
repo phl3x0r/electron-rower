@@ -9,14 +9,11 @@ import {
 } from '@angular/core';
 import {
   RowerEventMessage,
-  ChartData,
-  ChartDataPont,
   ChartConfig,
   ChartUnits
 } from '@models';
-import { Observable, Subscription, Subject, BehaviorSubject } from 'rxjs';
-import { tt500string } from '@utils';
-import { scan, share, tap, switchMap } from 'rxjs/operators';
+import { Observable, Subscription, BehaviorSubject } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import * as HighCharts from 'highcharts';
 import { MatSlideToggleChange } from '@angular/material';
 import { environment } from '@env';

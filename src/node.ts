@@ -2,8 +2,6 @@ import { app, BrowserWindow } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
 import { RowerEventMessage } from '@models';
-import { Readout } from '@server';
-import { takeWhile } from 'rxjs/operators';
 
 let win: BrowserWindow;
 
