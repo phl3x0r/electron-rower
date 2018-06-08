@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "npm run build:angular && npm run build:node && electron ./dist/electron-rower/node.js",
+    "start:web": "ng s -c web",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
